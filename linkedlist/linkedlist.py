@@ -13,6 +13,7 @@ class LinkedList:
         self.tail = None
         self.length = 0
 
+    # inserting at the end
     def at_the_end(self,value):
         new_node = Node(value)
         if self.head is None:
@@ -21,6 +22,17 @@ class LinkedList:
         else:
             self.tail.next=new_node
             self.tail = new_node
+        self.length +=1
+
+    #inserting at the begning
+    def at_the_begining(self, value):
+        new_node=Node(value)
+        if self.head is None:
+            self.head=new_node
+            self.tail=new_node
+        else:
+            new_node.next=self.head
+            self.head= new_node
         self.length +=1
 
     def __str__(self):
@@ -41,6 +53,8 @@ new_linked_list = LinkedList()
 new_linked_list.at_the_end(10)
 new_linked_list.at_the_end(20)
 new_linked_list.at_the_end(30)
+new_linked_list.at_the_begining(6)
+new_linked_list.at_the_begining(4)
 print(new_linked_list.head.value)
 print(new_linked_list.head.next)
 print(new_linked_list.tail)
