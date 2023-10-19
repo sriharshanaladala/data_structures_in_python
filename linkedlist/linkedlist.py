@@ -37,7 +37,10 @@ class LinkedList:
 
     def insert_at_any(self, value, place):
         new_node = Node(value)
-        if place == 0:
+        if self.length == 0:
+            self.head = new_node
+            self.tail = new_node
+        elif place == 0:
             new_node.next = self.head
             self.head = new_node
         else:
@@ -60,6 +63,7 @@ class LinkedList:
 
 
 new_linked_list = LinkedList()
+new_linked_list.insert_at_any(1,0)
 new_linked_list.at_the_end(10)
 new_linked_list.at_the_end(20)
 new_linked_list.at_the_end(30)
